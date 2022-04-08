@@ -26,13 +26,15 @@ public class Employee {
     protected String salary;
     @Column(name = "birthDate")
     protected String birthDate;
+    @Column(name = "idCompany")
+    protected int idCompany;
 
     // no-argument constructor
     public Employee()
     {
     }
 
-    public Employee(int idEmployee, String firstName, String lastName, String email, String phoneNumber, String address, String salary, String birthDate) {
+    public Employee(int idEmployee, String firstName, String lastName, String email, String phoneNumber, String address, String salary, String birthDate, int idCompany) {
         this.idEmployee = idEmployee;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,6 +43,7 @@ public class Employee {
         this.address = address;
         this.salary = salary;
         this.birthDate = birthDate;
+        this.idCompany = idCompany;
     }
 
     public int getIdEmployee() {
@@ -105,5 +108,13 @@ public class Employee {
 
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public int getIdCompany() {
+        return idCompany;
+    }
+
+    public void setIdCompany(int idCompany) {
+        this.idCompany = idCompany;
     }
 }

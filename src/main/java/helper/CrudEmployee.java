@@ -14,8 +14,8 @@ public class CrudEmployee {
     // no-argument constructor
     public CrudEmployee() { }
 
-    public void insertEmployee(int idEmp, String firstName, String lastName, String email, String phoneNumb, String address, String salary, String birth) {
-        Boolean result = employeeQuery.addEmployee(idEmp, firstName, lastName, email, phoneNumb, address, salary, birth);
+    public void insertEmployee(int idEmp, String firstName, String lastName, String email, String phoneNumb, String address, String salary, String birth, int idComp) {
+        Boolean result = employeeQuery.addEmployee(idEmp, firstName, lastName, email, phoneNumb, address, salary, birth, idComp);
 
         if ( result == true )
             System.out.println(" Employee Added ");
@@ -33,7 +33,8 @@ public class CrudEmployee {
             System.out.println(emp.getPhoneNumber()+"  -  ");
             System.out.println(emp.getAddress()+"  -  ");
             System.out.println(emp.getSalary()+"  -  ");
-            System.out.println(emp.getBirthDate());
+            System.out.println(emp.getBirthDate()+"  -  ");
+            System.out.println(emp.getIdCompany());
         }
     }
 
@@ -46,7 +47,8 @@ public class CrudEmployee {
             System.out.println(employee.getPhoneNumber()+"  -  ");
             System.out.println(employee.getAddress()+"  -  ");
             System.out.println(employee.getSalary()+"  -  ");
-            System.out.println(employee.getBirthDate());
+            System.out.println(employee.getBirthDate()+"  -  ");
+            System.out.println(employee.getIdCompany());
     }
 
     public void findEmployeeLastName(String lastName) {
@@ -59,12 +61,13 @@ public class CrudEmployee {
             System.out.println(emp.getPhoneNumber()+"  -  ");
             System.out.println(emp.getAddress()+"  -  ");
             System.out.println(emp.getSalary()+"  -  ");
-            System.out.println(emp.getBirthDate());
+            System.out.println(emp.getBirthDate()+"  -  ");
+            System.out.println(emp.getIdCompany());
         }
     }
 
-    public void updateEmployee(int idEmp, String firstName, String lastName, String email, String phoneNumb, String address, String salary, String birth) {
-        Boolean result = employeeQuery.updateEmployee(idEmp, firstName, lastName, email, phoneNumb, address, salary, birth);
+    public void updateEmployee(int idEmp, String firstName, String lastName, String email, String phoneNumb, String address, String salary, String birth, int idComp) {
+        Boolean result = employeeQuery.updateEmployee(idEmp, firstName, lastName, email, phoneNumb, address, salary, birth, idComp);
         if ( result == true )
             System.out.println(" Employee Updated ");
         else

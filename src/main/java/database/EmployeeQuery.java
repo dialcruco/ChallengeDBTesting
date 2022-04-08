@@ -19,9 +19,9 @@ public class EmployeeQuery {
         listEmployee = new ArrayList<Employee>();
     }
 
-    public Boolean addEmployee(int idEmp, String firstName, String lastName, String email, String phoneNumb, String address, String salary, String birth)
+    public Boolean addEmployee(int idEmp, String firstName, String lastName, String email, String phoneNumb, String address, String salary, String birth, int idComp)
     {
-        employee = new Employee(idEmp, firstName, lastName, email, phoneNumb, address, salary, birth);
+        employee = new Employee(idEmp, firstName, lastName, email, phoneNumb, address, salary, birth, idComp);
 
         entityManager.getTransaction().begin();
         entityManager.persist(employee);
@@ -51,7 +51,7 @@ public class EmployeeQuery {
         return listEmployee;
     }
 
-    public Boolean updateEmployee(int idEmp, String firstName, String lastName, String email, String phoneNumb, String address, String salary, String birth)
+    public Boolean updateEmployee(int idEmp, String firstName, String lastName, String email, String phoneNumb, String address, String salary, String birth, int idComp)
     {
         Boolean result = false;
         employee = new Employee();
@@ -65,6 +65,7 @@ public class EmployeeQuery {
             employee.setAddress(address);
             employee.setSalary(salary);
             employee.setBirthDate(birth);
+            employee.setIdCompany(idComp);
 
             entityManager.getTransaction().begin();
             entityManager.merge(employee);
